@@ -1,1 +1,47 @@
+require 'minitest/autorun'
+require_relative 'lootbag'
 
+class Lootbag_Tests < MiniTest::Test
+
+	def setup
+		@Bag = Bag.new
+		@Child = Child.new('Test Child')
+		@Toy = Toy.new('Ball')
+	end
+
+	def test_that_child_has_a_name
+		assert @Child.child_name == 'Test Child'
+	end
+
+	def test_that_child_has_delivered_property_as_false
+		refute @Child.delivered
+	end
+
+	def test_that_child_id_is_a_string
+		assert_kind_of String, @Child.child_id
+	end
+
+	def test_that_toy_has_a_name
+		assert @Toy.toy_name == 'Ball'
+	end
+
+	def test_that_toy_id_is_a_string
+		assert_kind_of String, @Toy.toy_id
+	end
+
+	def test_that_toy_bag_is_a_hash
+		assert_kind_of Hash, @Bag.toy_bag
+	end
+
+	def test_that_child_is_added_to_toy_bag
+		@Bag.add_child(@Child)
+		assert @Bag.toy_bag[@Child.child_id] == []
+	end
+
+	def test_that_toy_can_be_added_to_toy_bag
+		@Bag.add_child(@Child)
+		@Bag.add_toy(@Child.child_id, @Toy)
+		assert @Bag.toy_bag[@Child.child_id][0] == @Toy.toy_id
+	end
+
+end
