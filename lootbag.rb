@@ -16,6 +16,18 @@ class Bag
 		@toy_bag[child_id].push(toy.toy_id)
 	end
 
+	def remove_toy(child_id, toy_id)
+		@toy_bag[child_id].delete(toy_id)
+	end
+
+	def list_all_children
+		@toy_bag.keys
+	end
+
+	def list_toy_by_child(child_id)
+		@toy_bag[child_id]
+	end
+
 end
 
 class Child

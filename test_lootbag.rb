@@ -44,4 +44,23 @@ class Lootbag_Tests < MiniTest::Test
 		assert @Bag.toy_bag[@Child.child_id][0] == @Toy.toy_id
 	end
 
+	def test_that_toy_can_be_removed_from_toy_bag
+		@Bag.add_child(@Child)
+		@Bag.add_toy(@Child.child_id, @Toy)
+		@Bag.remove_toy(@Child.child_id, @Toy.toy_id)
+		assert @Bag.toy_bag[@Child.child_id].length == 0
+	end
+
+	def test_that_all_toys_can_be_listed
+		@Bag.add_child(@Child)
+		@Bag.add_toy(@Child.child_id, @Toy)
+		assert @Bag.list_all_children == @Bag.toy_bag.keys
+	end
+
+	def test_that_toys_can_be_returned_by_child_name
+		@Bag.add_child(@Child)
+		@Bag.add_toy(@Child.child_id, @Toy)
+		assert @Bag.list_toy_by_child(@Child.child_id).length == 1
+	end
+
 end
