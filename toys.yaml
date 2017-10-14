@@ -1,0 +1,11 @@
+---
+toys:
+  ---- !ruby/object:Toy
+toy_name: Ball
+toy_id: b9a5d4d4-d578-4130-a8dc-ae2c3b72d2c4
+--- !ruby/object:Toy
+toy_name: Doll
+toy_id: a031e767-1310-4816-82ff-1406847ea6a4
+--- !ruby/object:Toy
+toy_name: Transformer
+toy_id: e9aee2b7-7535-445a-934e-b836731ea1a8

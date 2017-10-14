@@ -1,5 +1,7 @@
 require 'minitest/autorun'
 require_relative 'lootbag'
+require_relative 'controller'
+
 
 class Lootbag_Tests < MiniTest::Test
 
@@ -61,6 +63,21 @@ class Lootbag_Tests < MiniTest::Test
 		@Bag.add_child(@Child)
 		@Bag.add_toy(@Child.child_id, @Toy)
 		assert @Bag.list_toy_by_child(@Child.child_id).length == 1
+	end
+
+	def test_that_bag_yaml_opens
+		bag_hash = YAML::load(File.open('bag.yaml'))
+		assert_kind_of Hash, bag_hash
+	end
+
+	def test_that_children_yaml_opens
+		children_hash = YAML::load(File.open('children.yaml'))
+		assert_kind_of Hash, children_hash
+	end
+
+	def test_that_toys_yaml_opens
+		toys_hash = YAML::load(File.open('toys.yaml'))
+		assert_kind_of Hash, toys_hash
 	end
 
 end
