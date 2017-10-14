@@ -8,3 +8,9 @@ toys:
   toy_id: d641a749-553b-4351-88cc-83b05d6673d9
 - toy_name: Top
   toy_id: ee3fe49f-6cb4-4b72-b89c-9890c9509462
+- toy_name: Action Figure
+  toy_id: cf42897a-829e-4cd0-ae7a-6c88db681885
+- toy_name: Wooden Horse
+  toy_id: 74b023d6-42a2-4997-8e76-fa288e9cfb30
+- toy_name: Stuffed Animal
+  toy_id: 00ee5f36-5ef2-4bec-8cee-caae9385b0a2
