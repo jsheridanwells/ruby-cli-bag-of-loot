@@ -3,25 +3,14 @@ require 'yaml'
 
 LootBag = Bag.new
 
-Children = {
-	:children_arr => []
-}
-
-Toys = {
-	:toys_arr => []
-}
-
-
 # open bag.yaml
 LootBag.toy_bag = YAML.load_file('bag.yaml')
 # open children.yaml
-Children[:children_arr] = YAML.load_file('children.yaml')["children"]
-# open toys.yaml
-Toys[:toys_arr] = YAML.load_file('toys.yaml')["toys"]
+Children = YAML.load_file('children.yaml')
+# # open toys.yaml
+Toys = YAML.load_file('toys.yaml')
 
-p LootBag
-p Children
-p Toys
+
 
 # add a toy to the bag by child
 def add_toy_to_bag(toy_name, child_name)
@@ -54,19 +43,45 @@ def add_toy_to_bag(toy_name, child_name)
 			 # push toy_id
 end
 
-def check_arr(item, arr)
 
+ # checks an array of hashes to see if hash contains an item
+def check_arr(item, arr, key)
+	arr.each do |hash|
+		if hash[key] === item
+			return true
+		end
+	end
+	return false
 end
 
+
+ # adds new child to Children hash, writes it to children.yaml
 def add_new_child(name)
 	new_child = Child.new(name)
-	File.open('children.yaml', 'a') {|f| f.write new_child.to_yaml}
+	new_hash = {}
+	new_child.instance_variables.each {|item| new_hash[item.to_s.delete('@')] = new_child.instance_variable_get(item)}
+	Children["children"].push(new_hash)
+	update_file = File.open('children.yaml', 'w')
+	update_file.write(Children.to_yaml)
 end
 
+ # adds new toy to Toys hash, writes it to toys.yaml
 def add_new_toy(name)
 	new_toy = Toy.new(name)
-	File.open('toys.yaml', 'a') {|f| f.write new_toy.to_yaml}
+	new_hash = {}
+	new_toy.instance_variables.each {|item| new_hash[item.to_s.delete('@')] = new_toy.instance_variable_get(item)}
+	Toys["toys"].push(new_hash)
+	update_file = File.open('toys.yaml', 'w')
+	update_file.write(Toys.to_yaml)
 end
 
-# File.open('/tmp/test.yml', 'w') {|f| f.write d.to_yaml }
+
+
+
+
+
+
+
+
+
 

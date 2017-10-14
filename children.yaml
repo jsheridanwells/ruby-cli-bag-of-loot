@@ -1,25 +1,14 @@
 ---
 children:
-  ---- !ruby/object:Child
-child_name: Justine
-delivered: false
-child_id: 601701f2-3151-4af6-97f6-e9f523900270
---- !ruby/object:Child
-child_name: Margaret
-delivered: false
-child_id: f17a130f-68b4-4f75-b9a8-5097b65bf12f
---- !ruby/object:Child
-child_name: James
-delivered: false
-child_id: 9a794c07-f91f-4d32-8ab9-751a0cd982a0--- !ruby/object:Child
-child_name: Holly
-delivered: false
-child_id: ed191d22-4ccd-4581-b65f-d260a8d36841
---- !ruby/object:Child
-child_name: Delilah
-delivered: false
-child_id: cccb16f7-f255-4ccf-9036-b6a27bbafdc3
---- !ruby/object:Child
-child_name: Karen
-delivered: false
-child_id: 9f80995f-17d5-4364-8e80-c2e4fae16273
+- child_name: Michael
+  delivered: false
+  child_id: 3145acfb-3ef9-4484-96f7-d018bf72287b
+- child_name: Justine
+  delivered: false
+  child_id: 4145acfb-3ef9-4484-96f7-d018bf72287b
+- child_name: Tina
+  delivered: false
+  child_id: 5145acfb-3ef9-4484-96f7-d018bf72287b
+- child_name: Brian
+  delivered: false
+  child_id: 6b6ea1f7-533f-40c2-b1bc-f2bf4520fbfe
