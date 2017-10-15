@@ -106,9 +106,17 @@ def list_toys_by_child(child_name)
 	puts toys
 end
 
+# sets value of delivered to true for specified child
+def mark_delivered(search_name)
+	Children["children"].select {|item| item["child_name"] == search_name}[0]["delivered"] = true
+	update_file('children.yaml', Children)
+end
+
 # seaches array of hashes for given value, returns other value by key
 def hash_query(search_str, arr, search_key, return_key)
 	if arr != nil
 		arr.find {|hash| hash[search_key] == search_str}[return_key]
 	end
 end
+
+mark_delivered('Justine')

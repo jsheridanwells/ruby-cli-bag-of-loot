@@ -4,7 +4,7 @@ children:
   delivered: false
   child_id: 3145acfb-3ef9-4484-96f7-d018bf72287b
 - child_name: Justine
-  delivered: false
+  delivered: true
   child_id: 4145acfb-3ef9-4484-96f7-d018bf72287b
 - child_name: Tina
   delivered: false
