@@ -14,3 +14,5 @@ toys:
   toy_id: 74b023d6-42a2-4997-8e76-fa288e9cfb30
 - toy_name: Stuffed Animal
   toy_id: 00ee5f36-5ef2-4bec-8cee-caae9385b0a2
+- toy_name: reindeer
+  toy_id: 8a3fa1ab-906f-4865-8cf8-3915db459120
