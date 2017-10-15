@@ -46,7 +46,6 @@ def add_toy_to_bag(toy_name, child_name)
 	update_file('bag.yaml', LootBag.toy_bag)
 end
 
-
  # checks an array of hashes to see if hash contains an item
 def check_arr(item, arr, key)
 	arr.each do |hash|
@@ -112,11 +111,16 @@ def mark_delivered(search_name)
 	update_file('children.yaml', Children)
 end
 
+def remove_toy(child_name, toy_name)
+	child_id = hash_query(child_name, Children["children"], 'child_name', 'child_id')
+	toy_id = hash_query(toy_name, Toys["toys"], 'toy_name', 'toy_id')
+	LootBag.toy_bag[child_id].delete(toy_id)
+	update_file('bag.yaml', LootBag.toy_bag)
+end
+
 # seaches array of hashes for given value, returns other value by key
 def hash_query(search_str, arr, search_key, return_key)
 	if arr != nil
 		arr.find {|hash| hash[search_key] == search_str}[return_key]
 	end
 end
-
-mark_delivered('Justine')
