@@ -119,6 +119,19 @@ def remove_toy(child_name, toy_name)
 	update_file('bag.yaml', LootBag.toy_bag)
 end
 
+# shows help message to user
+def show_help
+	puts "These are the following commands that this application accepts:"
+	puts "\t 'add' (child name) (toy name) - gives a child a new toy"
+	puts "\t 'remove' (toy name) (child name) - takes away the child's toy"
+	puts "\t 'ls' - lists all children and the toys they are receiving"
+	puts "\t 'ls' (child name) - lists all the toys that one child is receiving"
+	puts "\t 'delivered' (child name) - marks that the toys have been delivered to the child"
+	puts "\t 'help'  - shows all of the available commands that this application accepts"
+
+
+end
+
 # seaches array of hashes for given value, returns other value by key
 def hash_query(search_str, arr, search_key, return_key)
 	if arr != nil
