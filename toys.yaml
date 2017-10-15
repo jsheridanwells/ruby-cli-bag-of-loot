@@ -16,3 +16,7 @@ toys:
   toy_id: 00ee5f36-5ef2-4bec-8cee-caae9385b0a2
 - toy_name: reindeer
   toy_id: 8a3fa1ab-906f-4865-8cf8-3915db459120
+- toy_name: Stick
+  toy_id: 2ec88258-d790-4b44-9dac-be0c93eaf2d1
+- toy_name: Panda
+  toy_id: a03d7d48-ff73-4152-8a5f-d96ced77039a

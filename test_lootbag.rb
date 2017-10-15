@@ -80,4 +80,6 @@ class Lootbag_Tests < MiniTest::Test
 		assert_kind_of Hash, toys_hash
 	end
 
+	
+
 end
