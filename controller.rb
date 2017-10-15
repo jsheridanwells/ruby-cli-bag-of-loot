@@ -111,6 +111,7 @@ def mark_delivered(search_name)
 	update_file('children.yaml', Children)
 end
 
+# removes toy from toy array specified by child
 def remove_toy(child_name, toy_name)
 	child_id = hash_query(child_name, Children["children"], 'child_name', 'child_id')
 	toy_id = hash_query(toy_name, Toys["toys"], 'toy_name', 'toy_id')
