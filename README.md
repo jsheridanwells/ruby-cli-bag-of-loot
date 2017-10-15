@@ -1,3 +1,14 @@
+## Commands
+All commands are made through the `main.rb` file: `ruby main.rb [command]` <br>
+To add a toy to the toy bag, type `ruby main.rb add [toy name] [child name]`  <br>
+To remove a toy from the toy bag, type `ruby main.rb remove [child name] [toy name]`  <br>
+To mark toys as delivered, type `ruby main.rb delivered [child name]`  <br>
+To list all toys in the bag, type `ruby main.rb ls`  <br>
+To list toys for a particular child, type `ruby main.rb ls [child name]`  <br>
+To get a list of available commands, type `ruby main.rb help`
+
+
+
 ## Instructions
 
 You have an acquaintance whose job is to, once a year, delivery presents to the best kids around the world. They have a problem, though. There are so many good boys and girls in the world now, that their old paper accounting systems just don't cut it anymore. They want you to write a program that will let them do the following tasks.
