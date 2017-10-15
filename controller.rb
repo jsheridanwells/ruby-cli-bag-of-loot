@@ -86,13 +86,29 @@ def add_new_toy(name)
 	update_file('toys.yaml', Toys)
 end
 
+# list name of each child in loot bag and each toy the child gets
+def list_all_toys
+	child_ids = LootBag.toy_bag.keys
+	names = child_ids.map {|key| hash_query(key, Children["children"], "child_id", "child_name")}
+	toys = []
+	child_ids.each_with_index do |id, index|
+		toys = LootBag.toy_bag[id].map {|key| hash_query(key, Toys["toys"], "toy_id", "toy_name")}
+		puts "#{names[index]} wants:"
+		puts toys
+	end
+end
 
+# takes child's name, lists all toys in array associated with child
+def list_toys_by_child(child_name)
+	id = hash_query(child_name, Children["children"], 'child_name', 'child_id')
+	toys = LootBag.toy_bag[id].map {|id| hash_query(id, Toys["toys"], "toy_id", "toy_name")}
+	puts "#{child_name} wants: "
+	puts toys
+end
 
-
-
-
-
-
-
-
-
+# seaches array of hashes for given value, returns other value by key
+def hash_query(search_str, arr, search_key, return_key)
+	if arr != nil
+		arr.find {|hash| hash[search_key] == search_str}[return_key]
+	end
+end
